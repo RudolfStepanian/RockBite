@@ -20,5 +20,26 @@ namespace ClassLibrary
                 Cells.Add(new WarehouseCell(i, null, null));
             }
         }
+
+        public void AddItem(Item newItem)
+        {
+            WarehouseCell temp = Cells.Find(x => x.CellItem == null);
+            temp.CellItem = newItem;
+        }
+
+        public void AddItemCertaint(Item newItem, int cellId)
+        {
+            WarehouseCell temp = Cells.Find(x => x.Id == cellId);
+            if (temp.CellItem != null)
+            {
+                temp.CellItem = newItem;
+            }
+            else
+            {
+                throw new Exception("This cell is already filled");
+            }
+        }
+
+
     }
 }

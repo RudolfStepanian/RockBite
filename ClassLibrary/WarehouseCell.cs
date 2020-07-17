@@ -29,7 +29,5 @@ namespace ClassLibrary
             CellItem = cellItem;
             ItemCount = itemCount;
         }
-
-
     }
 }
